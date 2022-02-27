@@ -61,7 +61,7 @@ public class AdvertService {
 		final EmailMessage emailMessage = new EmailMessage();
 		emailMessage.setEmail(savedAdvert.getUser().getEmail());
 
-		// bannerClientOpenFeign.saveBanner(bannerBannerClientService.prepareBanner());
+		 bannerClientOpenFeign.saveBanner(bannerBannerClientService.prepareBanner());
 
 		queueService.sendMessage(emailMessage.getEmail().toString());
 		return convertToAdvertResponse(savedAdvert);
